@@ -1,0 +1,62 @@
+*{
+    margin: 0px;
+    grid-gap: 0px;
+    padding: 0px;
+}
+/* media query at 750px  */
+body::-webkit-scrollbar{
+    width: 1em;
+}
+.page{
+    height:auto;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+/* .border{
+    border: medium solid black;
+} */
+.side{
+    width:auto;
+    float: left;
+}
+.write{
+    width:auto;
+    float: right;
+}
+.toptoolbaar{ 
+    display: flex;
+    justify-content: space-between;     
+}
+.notelistitem{
+    cursor: pointer;
+    padding: 8px;
+    min-height: 24px;
+    max-width: 530px;
+}
+.notelisttitle{
+    font-weight: 500;
+}
+.notelisttext{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+.notelist{
+    overflow-y: scroll;
+    
+    max-height: 550px;
+}
+.floatleft{
+    float: left;
+}
+.floatright{
+    float: right;
+}
+a.myprofile{
+    color: white;
+}
+a:hover{
+    border: 1px dotted white;
+    text-decoration-style: solid;
+}
