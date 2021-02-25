@@ -37,6 +37,10 @@ body::-webkit-scrollbar{
 }
 .notelisttitle{
     font-weight: 500;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
 }
 .notelisttext{
     overflow: hidden;
