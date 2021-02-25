@@ -1,175 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/index.css" />
-    <script
-      src="https://kit.fontawesome.com/20970c5fb1.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-      crossorigin="anonymous"
-    ></script>
-    <title>Notes++</title>
-  </head>
 
-  <body>
-    <div class="layout">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand mx-4" href="#">Notes++</a>
-        <a href="#" class="nav-item nav-link myprofile" style="">My Profile</a>
-      </nav>
-      <div class="page" style="height: 500px">
-        <div class="side border">
-          <form class="d-flex border">
-            <input
-              class="form-control me-2 col"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="my-1 mx-3 btn btn-outline-success" type="submit">
-              <i class="fas fa-search"></i>
-            </button>
-            <button class="my-1 mx-1 btn btn-primary" type="submit">
-              New note
-            </button>
-          </form>
-          <!-- many dummy notes  -->
-          <div class="notelist">
-            <div class="notelistitem border">
-              <div class="notelisttitle">note1</div>
-              <div class="notelisttext">
-                text of note 1 in overflow ellipsis to see Lorem ipsum dolor sit
-                Loejiqjdwidnncnfieninnfcb
-              </div>
-            </div>
-            <!-- note2 -->
-            <div class="notelistitem border">
-              <div class="notelisttitle">note2</div>
-              <div class="notelisttext">
-                text of note 2 in overflow ellipsis to see Lorem ipsum dolor sit
-                Loejiqjdwidnncnfieninnfcb
-              </div>
-            </div>
-            <!-- note3 -->
-            <div class="notelistitem border">
-              <div class="notelisttitle">note1</div>
-              <div class="notelisttext">
-                text of note 1 in overflow ellipsis to see Lorem ipsum dolor sit
-                Loejiqjdwidnncnfieninnfcb
-              </div>
-            </div>
-            <!-- not4 -->
-            <div class="notelistitem border">
-              <div class="notelisttitle">note1</div>
-              <div class="notelisttext">
-                text of note 1 in overflow ellipsis to see Lorem ipsum dolor sit
-                Loejiqjdwidnncnfieninnfcb
-              </div>
-            </div>
-            <div class="notelistitem border">
-              <div class="notelisttitle">note1</div>
-              <div class="notelisttext">
-                text of note 1 in overflow ellipsis to see Lorem ipsum dolor sit
-                Loejiqjdwidnncnfieninnfcb
-              </div>
-            </div>
-            <div class="notelistitem border">
-              <div class="notelisttitle">note1</div>
-              <div class="notelisttext">
-                text of note 1 in overflow ellipsis to see Lorem ipsum dolor sit
-                Loejiqjdwidnncnfieninnfcb
-              </div>
-            </div>
-            <div class="notelistitem border">
-              <div class="notelisttitle">note1</div>
-              <div class="notelisttext">
-                text of note 1 in overflow ellipsis to see Lorem ipsum dolor sit
-                Loejiqjdwidnncnfieninnfcb
-              </div>
-            </div>
-            <div class="notelistitem border">
-              <div class="notelisttitle">note1</div>
-              <div class="notelisttext">
-                text of note 1 in overflow ellipsis to see Lorem ipsum dolor sit
-                Loejiqjdwidnncnfieninnfcb
-              </div>
-            </div>
-            <div class="notelistitem border">
-              <div class="notelisttitle">note2</div>
-              <div class="notelisttext">
-                text of note 2 in overflow ellipsis to see Lorem ipsum dolor sit
-                Loejiqjdwidnncnfieninnfcb
-              </div>
-            </div>
-            <div class="notelistitem border">
-              <div class="notelisttitle">note2</div>
-              <div class="notelisttext">
-                text of note 2 in overflow ellipsis to see Lorem ipsum dolor sit
-                Loejiqjdwidnncnfieninnfcb
-              </div>
-            </div>
-            <div class="notelistitem border">
-              <div class="notelisttitle">note2</div>
-              <div class="notelisttext">
-                text of note 2 in overflow ellipsis to see Lorem ipsum dolor sit
-                Loejiqjdwidnncnfieninnfcb
-              </div>
-            </div>
-            <div class="notelistitem border">
-              <div class="notelisttitle">note2</div>
-              <div class="notelisttext">
-                text of note 2 in overflow ellipsis to see Lorem ipsum dolor sit
-                Loejiqjdwidnncnfieninnfcb
-              </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="index.css">
+  <script src="https://kit.fontawesome.com/20970c5fb1.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+  </script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <title>Notera</title>
+</head>
+
+<body>
+  <div class="layout">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #aaaaaa">
+      <a class="navbar-brand mx-4" href="#">Notera</a>
+      <a href="#" class="nav-item nav-link myprofile" style="">My Profile</a>
+    </nav>
+    <div class="page" style="height: auto">
+      <div class="side border">
+        <form class="d-flex border bglightblue">
+          <input style="background: #f9f7cf;" class="form-control me-2 col" type="search" placeholder="Search"
+            aria-label="Search" />
+          <button class="my-1 mx-3 btn btn-success" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+          <button class="my-1 mx-1 btn btn-primary" type="submit">
+            New note
+          </button>
+        </form>
+        <!-- many dummy notes  -->
+        <div class="notelist bgpinkish">
+          <div class="notelistitem border">
+            <div class="notelisttitle">note1</div>
+            <div class="notelisttext">
+              text of note 1 in overflow ellipsis to see Lorem ipsum dolor sit
+              Loejiqjdwidnncnfieninnfcb
             </div>
           </div>
-        </div>
-        <div class="write border">
-          <ul class="nav justify-content-end border">
-            </li>
-            <li class="nav-item">
-              <p class="mx-2 my-2">Date</p>
-            </li>
-            <li class="nav-item">
-              <p class="mx-2 my-2">Time</p>
-            </li>
-            <li class="nav-item">
-              <button class="my-1 mx-1 btn btn-outline-primary" type="submit">
-                save
-              </button>
-            <li class="nav-item">
-              <button class="my-1 mx-1 btn btn-outline-secondary" type="submit">
-                Clear
-              </button>
-            </li>
-            <li class="nav-item">
-              <button class="my-1 mx-1 btn btn-outline-danger" type="submit">
-                Delete
-              </button>
-            </li>
-          </ul>
-          <div class="form-group">
-            <!-- <label for="exampleFormControlTextarea1">Example textarea</label> -->
-            <textarea
-              class="form-control px-10 py-20"
-              id="exampleFormControlTextarea1"
-              rows="22"
-            ></textarea>
+          <!-- note2 -->
+          <div class="notelistitem border">
+            <div class="notelisttitle">note2</div>
+            <div class="notelisttext">
+              text of note 2 in overflow ellipsis to see Lorem ipsum dolor sit
+              Loejiqjdwidnncnfieninnfcb
+            </div>
+          </div>
+          <!-- note3 -->
+          <div class="notelistitem border">
+            <div class="notelisttitle">note1</div>
+            <div class="notelisttext">
+              text of note 1 in overflow ellipsis to see Lorem ipsum dolor sit
+              Loejiqjdwidnncnfieninnfcb
+            </div>
+          </div>
+          <!-- not4 -->
+          <div class="notelistitem border">
+            <div class="notelisttitle">note1</div>
+            <div class="notelisttext">
+              text of note 1 in overflow ellipsis to see Lorem ipsum dolor sit
+              Loejiqjdwidnncnfieninnfcb
+            </div>
+          </div>
+          <div class="notelistitem border">
+            <div class="notelisttitle">note1</div>
+            <div class="notelisttext">
+              text of note 1 in overflow ellipsis to see Lorem ipsum dolor sit
+              Loejiqjdwidnncnfieninnfcb
+            </div>
+          </div>
+          <div class="notelistitem border">
+            <div class="notelisttitle">note1</div>
+            <div class="notelisttext">
+              text of note 1 in overflow ellipsis to see Lorem ipsum dolor sit
+              Loejiqjdwidnncnfieninnfcb
+            </div>
+          </div>
+          <div class="notelistitem border">
+            <div class="notelisttitle">note1</div>
+            <div class="notelisttext">
+              text of note 1 in overflow ellipsis to see Lorem ipsum dolor sit
+              Loejiqjdwidnncnfieninnfcb
+            </div>
+          </div>
+          <div class="notelistitem border">
+            <div class="notelisttitle">note1</div>
+            <div class="notelisttext">
+              text of note 1 in overflow ellipsis to see Lorem ipsum dolor sit
+              Loejiqjdwidnncnfieninnfcb
+            </div>
+          </div>
+          <div class="notelistitem border">
+            <div class="notelisttitle">note2</div>
+            <div class="notelisttext">
+              text of note 2 in overflow ellipsis to see Lorem ipsum dolor sit
+              Loejiqjdwidnncnfieninnfcb
+            </div>
+          </div>
+          <div class="notelistitem border">
+            <div class="notelisttitle">note2</div>
+            <div class="notelisttext">
+              text of note 2 in overflow ellipsis to see Lorem ipsum dolor sit
+              Loejiqjdwidnncnfieninnfcb
+            </div>
+          </div>
+          <div class="notelistitem border">
+            <div class="notelisttitle">note2</div>
+            <div class="notelisttext">
+              text of note 2 in overflow ellipsis to see Lorem ipsum dolor sit
+              Loejiqjdwidnncnfieninnfcb
+            </div>
+          </div>
+          <div class="notelistitem border">
+            <div class="notelisttitle">note2</div>
+            <div class="notelisttext">
+              text of note 2 in overflow ellipsis to see Lorem ipsum dolor sit
+              Loejiqjdwidnncnfieninnfcb
+            </div>
           </div>
         </div>
       </div>
+      <div class="write border">
+        <ul class="nav justify-content-end border bglightblue">
+          </li>
+          <li class="nav-item">
+            <p class="mx-2 my-2">Date</p>
+          </li>
+          <li class="nav-item">
+            <p class="mx-2 my-2">Time</p>
+          </li>
+          <li class="nav-item">
+            <button class="my-1 mx-1 btn btn-primary" type="submit">
+              save
+            </button>
+          <li class="nav-item">
+            <button class="my-1 mx-1 btn btn-secondary" type="submit">
+              Clear
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="my-1 mx-1 btn btn-danger" type="submit">
+              Delete
+            </button>
+          </li>
+        </ul>
+        <div class="form-group bglightblue">
+          <!-- <label for="exampleFormControlTextarea1">Example textarea</label> -->
+          <textarea class="form-control px-10 py-20" style="background: #f9f7cf; font-family: 'Ubuntu', sans-serif;
+              font-size: 20px;" id="exampleFormControlTextarea1" rows="18"></textarea>
+        </div>
+      </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

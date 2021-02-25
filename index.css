@@ -2,6 +2,8 @@
     margin: 0px;
     grid-gap: 0px;
     padding: 0px;
+    
+    border-radius: 5px;
 }
 /* media query at 750px  */
 body::-webkit-scrollbar{
@@ -54,9 +56,18 @@ body::-webkit-scrollbar{
     float: right;
 }
 a.myprofile{
-    color: white;
+    color:white;
 }
 a:hover{
     border: 1px dotted white;
     text-decoration-style: solid;
+    /* color: black; */
+    color: white;
+}
+.bglightblue{
+    background-color: #BBBBBB;
+    color:azure ;
+}
+.bgpinkish{
+    background-color: #f2dcbb;
 }
