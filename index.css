@@ -5,35 +5,32 @@
     
     border-radius: 5px;
 }
-/* media query at 750px  */
-body::-webkit-scrollbar{
-    width: 1em;
-}
 .page{
     height:auto;
-    display: grid;
-    grid-template-columns: 2fr 3fr;
+    display: flex;
+    flex-direction: row;
 }
-/* .border{
+.border{
     border: medium solid black;
-} */
+}
 .side{
-    width:auto;
+    width: 33%;
     float: left;
+    overflow: auto;
+    padding: 2px;
 }
 .write{
-    width:auto;
+    width: 66%;
     float: right;
-}
-.toptoolbaar{ 
-    display: flex;
-    justify-content: space-between;     
+    overflow: auto;
+    padding: 2px;
 }
 .notelistitem{
     cursor: pointer;
     padding: 8px;
     min-height: 24px;
-    max-width: 530px;
+    max-width: 500px;   
+    width: auto; 
 }
 .notelisttitle{
     font-weight: 500;
@@ -60,18 +57,20 @@ body::-webkit-scrollbar{
     float: right;
 }
 a.myprofile{
-    color:white;
+    color:#386140;
+    font-weight: 700;
 }
 a:hover{
-    border: 1px dotted white;
-    text-decoration-style: solid;
-    /* color: black; */
-    color: white;
+    border: 2px dotted white;
+    color: #386140;
 }
 .bglightblue{
-    background-color: #BBBBBB;
+    background-color: #3F6134;
     color:azure ;
 }
 .bgpinkish{
-    background-color: #f2dcbb;
+    background-color: #96E67C;
+}
+a{
+    color: #386140;
 }

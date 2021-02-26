@@ -14,25 +14,25 @@
   </script>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <title>Notera</title>
+  <link rel="icon" href="img/notera.ico" type="image/x-icon">
+  <title>Notera-App</title>
 </head>
 
 <body>
   <div class="layout">
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #aaaaaa">
-      <a class="navbar-brand mx-4" href="#">Notera</a>
-      <a href="#" class="nav-item nav-link myprofile" style="">My Profile</a>
+    <nav class="navbar navbar-expand-lg" style="background-color: #B6E3BF">
+      <a class="navbar-brand mx-4" href="#" style="color: #386140; font-weight: 700;">Notera</a>
+      <a href="signin.html" class="nav-item nav-link myprofile">My Profile</a>
     </nav>
     <!-- full page -->
     <div class="page" style="height: auto">
       <!-- left side window -->
       <div class="side border">
         <!-- search bar -->
-        <form class="d-flex border bglightblue">
+        <form class="d-flex border bglightblue" style="max-width: 500px; width: auto;">
           <input style="background: #f9f7cf;" class="form-control me-2 col" type="search" placeholder="Search"
             aria-label="Search" />
-          <button class="my-1 mx-3 btn btn-success" type="submit">
+          <button class="my-1 mx-1 btn btn-success" type="submit">
             <i class="fas fa-search"></i>
           </button>
           <button class="my-1 mx-1 btn btn-primary" type="submit">
@@ -158,13 +158,13 @@
         </ul>
         <!-- notestitle  -->
         <div class="form-group bglightblue">
-          <textarea class="form-control px-10 " placeholder="Notes Title" style="background: #f9f7cf; font-family: 'Ubuntu', sans-serif;
+          <textarea class="form-control px-10 " placeholder="Notes Title" style="background: #D2F8C0; font-family: 'Ubuntu', sans-serif;
               font-size: 20px;" id="exampleFormControlTextarea1" rows="2"></textarea>
         </div>
         <hr style="margin: 5px;">
         <!-- text area -->
         <div class="form-group bglightblue">
-          <textarea id="addTxt" class="form-control px-10 py-20" placeholder="Note-Content" style="background: #f9f7cf; font-family: 'Ubuntu', sans-serif;
+          <textarea id="addTxt" class="form-control px-10 py-20" placeholder="Note-Content" style="background: #D2F8C0; font-family: 'Ubuntu', sans-serif;
               font-size: 20px;" id="exampleFormControlTextarea1" rows="15"></textarea>
         </div>
       </div>
