@@ -7,11 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="index.css">
   <script src="https://kit.fontawesome.com/20970c5fb1.js" crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-  </script>
+  <link rel="stylesheet" href="bootstrap.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
   <link rel="icon" href="img/notera.ico" type="image/x-icon">
@@ -23,110 +19,23 @@
     <nav class="navbar navbar-expand-lg" style="background-color: #B6E3BF">
       <div class="container-fluid"><a class="navbar-brand mx-4 h1" href="#"
           style="color: #386140; font-weight: 700;">Notera</a>
-          <a href="#" class="myprofile">My profile</a>
+        <a href="#" class="myprofile">My profile</a>
     </nav>
     <!-- full page -->
     <div class="page" style="height: auto">
       <!-- left side window -->
       <div class="side border">
         <!-- search bar -->
-        <form class="flex border bglightblue" style="max-width: 500px; width: auto;">
-          <input style="background: #f9f7cf;" class="form-control me-2 col" type="search" placeholder="Search"
-            aria-label="Search" />
-          <button class="my-1 mx-1 btn btn-success" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-          <button class="my-1 mx-1 btn btn-primary" type="submit">
-            New note
-          </button>
+        <form class="d-flex border bglightblue" style="max-width: 500px; width: auto;">
+          <input id="searchTxt" style="background: #f9f7cf;" class="form-control me-2 col" type="search"
+            placeholder="Search here" aria-label="Search" />
         </form>
         <!-- many dummy notes  -->
-        <div class="notelist bgpinkish">
+        <div id="notes" class="notelist bgpinkish">
           <div class="notelistitem border">
-            <div class="notelisttitle">note1</div>
+            <div class="notelisttitle">dummy note</div>
             <div class="notelisttext">
-              text of note 1 in overflow ellipsis to see Lorem ipsum dolor sit
-              Loejiqjdwidnncnfieninnfcb
-            </div>
-          </div>
-          <!-- note2 -->
-          <div class="notelistitem border">
-            <div class="notelisttitle">note2</div>
-            <div class="notelisttext">
-              text of note 2 in overflow ellipsis to see Lorem ipsum dolor sit
-              Loejiqjdwidnncnfieninnfcb
-            </div>
-          </div>
-          <!-- note3 -->
-          <div class="notelistitem border">
-            <div class="notelisttitle">note1</div>
-            <div class="notelisttext">
-              text of note 1 in overflow ellipsis to see Lorem ipsum dolor sit
-              Loejiqjdwidnncnfieninnfcb
-            </div>
-          </div>
-          <!-- not4 -->
-          <div class="notelistitem border">
-            <div class="notelisttitle">note1</div>
-            <div class="notelisttext">
-              text of note 1 in overflow ellipsis to see Lorem ipsum dolor sit
-              Loejiqjdwidnncnfieninnfcb
-            </div>
-          </div>
-          <div class="notelistitem border">
-            <div class="notelisttitle">note1</div>
-            <div class="notelisttext">
-              text of note 1 in overflow ellipsis to see Lorem ipsum dolor sit
-              Loejiqjdwidnncnfieninnfcb
-            </div>
-          </div>
-          <div class="notelistitem border">
-            <div class="notelisttitle">note1</div>
-            <div class="notelisttext">
-              text of note 1 in overflow ellipsis to see Lorem ipsum dolor sit
-              Loejiqjdwidnncnfieninnfcb
-            </div>
-          </div>
-          <div class="notelistitem border">
-            <div class="notelisttitle">note1</div>
-            <div class="notelisttext">
-              text of note 1 in overflow ellipsis to see Lorem ipsum dolor sit
-              Loejiqjdwidnncnfieninnfcb
-            </div>
-          </div>
-          <div class="notelistitem border">
-            <div class="notelisttitle">note1</div>
-            <div class="notelisttext">
-              text of note 1 in overflow ellipsis to see Lorem ipsum dolor sit
-              Loejiqjdwidnncnfieninnfcb
-            </div>
-          </div>
-          <div class="notelistitem border">
-            <div class="notelisttitle">note2</div>
-            <div class="notelisttext">
-              text of note 2 in overflow ellipsis to see Lorem ipsum dolor sit
-              Loejiqjdwidnncnfieninnfcb
-            </div>
-          </div>
-          <div class="notelistitem border">
-            <div class="notelisttitle">note2</div>
-            <div class="notelisttext">
-              text of note 2 in overflow ellipsis to see Lorem ipsum dolor sit
-              Loejiqjdwidnncnfieninnfcb
-            </div>
-          </div>
-          <div class="notelistitem border">
-            <div class="notelisttitle">note2</div>
-            <div class="notelisttext">
-              text of note 2 in overflow ellipsis to see Lorem ipsum dolor sit
-              Loejiqjdwidnncnfieninnfcb
-            </div>
-          </div>
-          <div class="notelistitem border">
-            <div class="notelisttitle">note2</div>
-            <div class="notelisttext">
-              text of note 2 in overflow ellipsis to see Lorem ipsum dolor sit
-              Loejiqjdwidnncnfieninnfcb
+              dummy content
             </div>
           </div>
         </div>
@@ -135,42 +44,32 @@
       <div class="write border">
         <!-- toolbar -->
         <ul class="nav justify-content-end border bglightblue">
+          <li class="nav-item">
+            <button class="my-1 mx-1 btn btn-primary" type="submit">
+              New note
+            </button>
           </li>
           <li class="nav-item">
-            <p class="mx-2 my-2">Date</p>
-          </li>
-          <li class="nav-item">
-            <p class="mx-2 my-2">Time</p>
-          </li>
-          <li class="nav-item">
-            <button id="addNote" class="my-1 mx-1 btn btn-primary" type="submit">
+            <button id="addBtn" class="my-1 mx-1 btn btn-primary" type="submit">
               save
-            </button>
-          <li class="nav-item">
-            <button class="my-1 mx-1 btn btn-secondary" type="submit">
-              Clear
-            </button>
-          </li>
-          <li class="nav-item">
-            <button class="my-1 mx-1 btn btn-danger" type="submit">
-              Delete
             </button>
           </li>
         </ul>
         <!-- notestitle  -->
         <div class="form-group bglightblue">
-          <textarea class="form-control px-10 " placeholder="Notes Title" style="background: #D2F8C0; font-family: 'Ubuntu', sans-serif;
-              font-size: 20px;" id="exampleFormControlTextarea1" rows="2"></textarea>
+          <textarea id="notetitle" class="form-control px-10 " placeholder="Notes Title" style="background: #D2F8C0; font-family: 'Ubuntu', sans-serif;
+              font-size: 20px;" id="note-title" rows="2"></textarea>
         </div>
         <hr style="margin: 5px;">
         <!-- text area -->
         <div class="form-group bglightblue">
-          <textarea id="addTxt" class="form-control px-10 py-20" placeholder="Note-Content" style="background: #D2F8C0; font-family: 'Ubuntu', sans-serif;
-              font-size: 20px;" id="exampleFormControlTextarea1" rows="15"></textarea>
+          <textarea id="notecontent" class="form-control px-10 py-20" placeholder="Note-Content" style="background: #D2F8C0; font-family: 'Ubuntu', sans-serif;
+              font-size: 20px;" id="note-content" rows="15"></textarea>
         </div>
       </div>
     </div>
   </div>
+  <script src="jquery.min.js"></script>
   <script src="index.js"></script>
 </body>
 
