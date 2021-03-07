@@ -77,3 +77,41 @@ a{
 .deleteBtn{
     background-color: brown;
 }
+#searchbox{
+    max-width: 500px; 
+    width: auto;
+}
+@media only screen and (max-width: 600px) {
+    .page {
+        height:auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .side{
+        width: auto;
+        float: left;
+        overflow: auto;
+        padding: 2px;
+    }
+    .notelistitem{
+        cursor: pointer;
+        padding: 8px;
+        min-height: 24px;   
+        width: auto;
+        max-width: 600px;
+    }
+    .write{
+        width: 100%;
+        float: right;
+        overflow: auto;
+        padding: 2px;
+    }
+    #searchbox{
+        max-width: 600px; 
+        width: auto;
+    }
+    .notelist{
+        overflow-y: scroll; 
+        max-height: 200px;
+    }
+  }

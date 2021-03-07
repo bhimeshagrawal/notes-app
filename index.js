@@ -1,19 +1,31 @@
 console.log("welcome to notera");
 showNotes();
+
 // If user add note add it to local storage
 var addBtn = document.getElementById("addBtn");
 addBtn.addEventListener("click", function (e) {
   var addTxt = document.getElementById("notecontent");
+  var addTitle = document.getElementById("notetitle");
   var notes = localStorage.getItem("notes");
   if (notes == null) {
     notesObj = [];
   } else {
     notesObj = JSON.parse(notes);
   }
-  notesObj.push(addTxt.value);
+  // object for title and text and Date
+  let myObj = {
+    title: addTitle.value,
+    text: addTxt.value
+  }
+  //pushing input to local storage
+  notesObj.push(myObj);
   localStorage.setItem("notes", JSON.stringify(notesObj));
+  //remove previous note inputs
   addTxt.value = "";
+  addTitle.value = "";
+
   console.log(notesObj);
+  //input will reflect to note list
   showNotes();
 });
 // function to show elements from local storage
@@ -34,8 +46,8 @@ function showNotes() {
             <i class="fas fa-trash"></i>
           </button>
           <div class="mx-2">
-          <div class="notelisttitle" id="title${index}"> note ${index + 1}</div>
-          <div class="notelisttext">${element} </div>
+          <div class="notelisttitle" id="title${index}">${element.title}</div>
+          <div class="notelisttext">${element.text} </div>
           </div>
           </div>
           </div>
@@ -74,3 +86,5 @@ search.addEventListener("input", function () {
     }
   });
 });
+
+

@@ -15,18 +15,19 @@
 </head>
 
 <body>
+
   <div class="layout">
     <nav class="navbar navbar-expand-lg" style="background-color: #B6E3BF">
       <div class="container-fluid"><a class="navbar-brand mx-4 h1" href="#"
           style="color: #386140; font-weight: 700;">Notera</a>
         <a href="#" class="myprofile">My profile</a>
     </nav>
-    <!-- full page -->
+    <!-- application page -->
     <div class="page" style="height: auto">
-      <!-- left side window -->
+      <!-- left side/note-list window -->
       <div class="side border">
         <!-- search bar -->
-        <form class="d-flex border bglightblue" style="max-width: 500px; width: auto;">
+        <form id="searchbox" class="d-flex border bglightblue">
           <input id="searchTxt" style="background: #f9f7cf;" class="form-control me-2 col" type="search"
             placeholder="Search here" aria-label="Search" />
         </form>
@@ -40,15 +41,10 @@
           </div>
         </div>
       </div>
-      <!-- right side window  -->
+      <!-- right side/note edit window  -->
       <div class="write border">
         <!-- toolbar -->
         <ul class="nav justify-content-end border bglightblue">
-          <li class="nav-item">
-            <button class="my-1 mx-1 btn btn-primary" type="submit">
-              New note
-            </button>
-          </li>
           <li class="nav-item">
             <button id="addBtn" class="my-1 mx-1 btn btn-primary" type="submit">
               save
@@ -58,7 +54,7 @@
         <!-- notestitle  -->
         <div class="form-group bglightblue">
           <textarea id="notetitle" class="form-control px-10 " placeholder="Notes Title" style="background: #D2F8C0; font-family: 'Ubuntu', sans-serif;
-              font-size: 20px;" id="note-title" rows="2"></textarea>
+              font-size: 20px;" id="note-title" rows="2" required></textarea>
         </div>
         <hr style="margin: 5px;">
         <!-- text area -->
@@ -69,6 +65,7 @@
       </div>
     </div>
   </div>
+
   <script src="jquery.min.js"></script>
   <script src="index.js"></script>
 </body>
