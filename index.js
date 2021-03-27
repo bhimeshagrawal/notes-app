@@ -2,15 +2,19 @@ console.log("welcome to notera");
 showNotes();
 // If user add note add it to local storage
 var addBtn = document.getElementById("addBtn");
+// when user clicks save button
 addBtn.addEventListener("click", function (e) 
 {
+  //takes content out of text area and store them in variable
    var addTxt = document.getElementById("notecontent");
    var addTitle = document.getElementById("notetitle");
    var notes = localStorage.getItem("savedNotes");
+   //makes a array of objects if notes are zero
    if (notes == null) 
    {
     notesObj = [];
    } 
+   // if notes are not zero 
    else 
    {
     notesObj = JSON.parse(notes);
@@ -26,6 +30,7 @@ addBtn.addEventListener("click", function (e)
   addTxt.value = "";
   addTitle.value = "";
   console.log(notesObj);
+  window.location.reload();
   //input will reflect to note list
   showNotes();
 });
@@ -54,6 +59,9 @@ function showNotes()
           <div class="notelisttitle" id="title${index}">${element.title}</div>
           <div class="notelisttext" id="text${index}">${element.text} </div>
           </div>
+          <button class="my-1 btn btn-default deleteBtn " type="submit" id="e${index}" onclick="editNote(this.id.substr(id.length - 1))">
+            <i class="fas fa-edit"></i>
+          </button>
           </div>
           </div>
           `;
@@ -101,7 +109,7 @@ search.addEventListener("input", function ()
     }
   });
 });
-
+//when click on any note in list then this function runs
 function grabNotes(index){
   parent = document.getElementById("note" + index)
   childrenTitle =  parent.children[0];
@@ -117,17 +125,34 @@ function grabNotes(index){
   document.getElementById("disableViewBtn").style = "display : list-item";
   //removes save note button because the note can only be edited
   document.getElementById("addBtn").style = "display : none";
-  //shows edit button
-  document.getElementById("editBtn").style = "display : list-item";
+  document.getElementById("notetitle").disabled = "true";
+  document.getElementById("notecontent").disabled = "true";
 }
+//when we click cross button this runs
 function disableView(){
   //sets value of show box to null
   document.getElementById("notetitle").innerHTML   = "";
   document.getElementById("notecontent").innerHTML = "";
-  //remove edit button since its of no use because no note will be displayed when this function runs
-  document.getElementById("editBtn").style = "display : none";
   //hide the cross button because no notes is under display
   document.getElementById("disableViewBtn").style = "display : none";
   //shows save button because new note to be added
   document.getElementById("addBtn").style = "display : list-item";
+  document.getElementById("notetitle").disabled = "false";
+  document.getElementById("notecontent").disabled = "false";
+  window.location.reload();
+}
+function editNote(index){
+  console.log(index);
+  //grabbing notes
+  parent = document.getElementById("note" + index)
+  childrenTitle =  parent.children[0];
+  childrenText = parent.children[1];
+  document.getElementById("disableViewBtn").classList.remove("disabled");
+  // console.log(` text${index} is title `+ childrenTitle.innerHTML);
+  // console.log(` text${index} is text `+ childrenText.innerHTML);
+  // add title to show box 
+  document.getElementById("notetitle").innerHTML   = childrenTitle.innerHTML;
+  // add text to show box
+  document.getElementById("notecontent").innerHTML = childrenText.innerHTML;
+  deleteNote(index);
 }
