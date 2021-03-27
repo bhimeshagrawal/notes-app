@@ -1,36 +1,14 @@
 *{
-    margin: 0px;
-    grid-gap: 0px;
-    padding: 0px;
-    
-    border-radius: 5px;
-}
-.page{
-    height:auto;
-    display: flex;
-    flex-direction: row;
-}
-.border{
-    border: medium solid black;
-}
-.side{
-    width: 33%;
-    float: left;
-    overflow: auto;
-    padding: 2px;
-}
-.write{
-    width: 66%;
-    float: right;
-    overflow: auto;
-    padding: 2px;
+    scrollbar-color: rgba(0,0,0,.2) hsla(0,0%,100%,.1);
+    scrollbar-width: thin
 }
 .notelistitem{
     cursor: pointer;
     padding: 8px;
-    min-height: 24px;
-    max-width: 500px;   
-    width: auto; 
+    margin: 2px;
+    border-radius: 4px  ;
+    max-width: 500px;
+    width: auto;
 }
 .notelisttitle{
     font-weight: 500;
@@ -38,67 +16,55 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     word-wrap: break-word;
+    flex-grow: 1;
 }
 .notelisttext{
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     word-wrap: break-word;
+    flex-grow: 1;
 }
 .notelist{
     overflow-y: scroll;
-    
-    max-height: 500px;
+    max-height: 560px;
 }
-.floatleft{
-    float: left;
-}
-.floatright{
-    float: right;
-}
-a.myprofile{
-    color:#386140;
-    font-weight: 700;
-}
-a:hover{
-    border: 2px dotted white;
-    color: #386140;
+.noteCardWritten{
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    min-width: 0;
 }
 .bglightblue{
-    background-color: #3F6134;
+    background-color: #33B0AC;
     color:azure ;
-}
-.bgpinkish{
-    background-color: #96E67C;
-}
-a{
-    color: #386140;
+    border-radius: 4px;
 }
 .deleteBtn{
     background-color: brown;
 }
 #searchbox{
-    max-width: 500px; 
-    width: auto;
+    max-width: 768px;
 }
-@media only screen and (max-width: 600px) {
-    .page {
-        height:auto;
-        display: flex;
-        flex-direction: column;
-    }
-    .side{
-        width: auto;
-        float: left;
-        overflow: auto;
-        padding: 2px;
-    }
+#notetitle{
+    font-weight: 500;
+}
+#editBtn{
+    display:none;   
+}
+#disableViewBtn{
+    display:none;
+}
+@media only screen and (max-width: 768px) {
     .notelistitem{
         cursor: pointer;
         padding: 8px;
         min-height: 24px;   
         width: auto;
-        max-width: 600px;
+        max-width: 768px;
+        margin: 2px;
     }
     .write{
         width: 100%;
