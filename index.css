@@ -37,25 +37,17 @@
     justify-content: center;
     min-width: 0;
 }
-.bglightblue{
-    background-color: #33B0AC;
-    color:azure ;
-    border-radius: 4px;
-}
-.deleteBtn{
-    background-color: brown;
-}
 #searchbox{
     max-width: 768px;
 }
 #notetitle{
     font-weight: 500;
 }
-#editBtn{
-    display:none;   
-}
 #disableViewBtn{
     display:none;
+}
+.bgnav{
+    background-color: #f8f9fa;
 }
 @media only screen and (max-width: 768px) {
     .notelistitem{
@@ -73,7 +65,7 @@
         padding: 2px;
     }
     #searchbox{
-        max-width: 600px; 
+        max-width: 768px; 
         width: auto;
     }
     .notelist{

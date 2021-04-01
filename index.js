@@ -29,7 +29,7 @@ addBtn.addEventListener("click", function (e)
   //remove previous note inputs
   addTxt.value = "";
   addTitle.value = "";
-  console.log(notesObj);
+  // console.log(notesObj);
   window.location.reload();
   //input will reflect to note list
   showNotes();
@@ -117,42 +117,31 @@ function grabNotes(index){
   document.getElementById("disableViewBtn").classList.remove("disabled");
   // console.log(` text${index} is title `+ childrenTitle.innerHTML);
   // console.log(` text${index} is text `+ childrenText.innerHTML);
-  // add title to show box 
-  document.getElementById("notetitle").innerHTML   = childrenTitle.innerHTML;
-  // add text to show box
-  document.getElementById("notecontent").innerHTML = childrenText.innerHTML;
-  //show button to remove displaying current note
-  document.getElementById("disableViewBtn").style = "display : list-item";
-  //removes save note button because the note can only be edited
-  document.getElementById("addBtn").style = "display : none";
-  document.getElementById("notetitle").disabled = "true";
-  document.getElementById("notecontent").disabled = "true";
+  $("#notetitle").html(childrenTitle.innerHTML);
+  $("#notecontent").html(childrenText.innerHTML);
+  $("#disableViewBtn").css("display","list-item");
+  $("#addBtn").css("display","none");
+  $("#notetitle").prop("disabled","true");
+  $("#notecontent").prop("disabled","true");
 }
 //when we click cross button this runs
 function disableView(){
-  //sets value of show box to null
-  document.getElementById("notetitle").innerHTML   = "";
-  document.getElementById("notecontent").innerHTML = "";
-  //hide the cross button because no notes is under display
-  document.getElementById("disableViewBtn").style = "display : none";
-  //shows save button because new note to be added
-  document.getElementById("addBtn").style = "display : list-item";
-  document.getElementById("notetitle").disabled = "false";
-  document.getElementById("notecontent").disabled = "false";
+  $("#notetitle").html("");
+  $("#notecontent").html("");
+  $("#disableViewBtn").css("display","none");
+  $("#addBtn").css("display","list-item");
+  $("#notetitle").removeAttr("disabled");
+  $("#notecontent").removeAttr("disabled");
   window.location.reload();
 }
 function editNote(index){
-  console.log(index);
-  //grabbing notes
   parent = document.getElementById("note" + index)
   childrenTitle =  parent.children[0];
   childrenText = parent.children[1];
   document.getElementById("disableViewBtn").classList.remove("disabled");
-  // console.log(` text${index} is title `+ childrenTitle.innerHTML);
-  // console.log(` text${index} is text `+ childrenText.innerHTML);
-  // add title to show box 
-  document.getElementById("notetitle").innerHTML   = childrenTitle.innerHTML;
-  // add text to show box
-  document.getElementById("notecontent").innerHTML = childrenText.innerHTML;
+  $("#notetitle").html(childrenTitle.innerHTML);
+  $("#notecontent").html(childrenText.innerHTML);
+  $("#notetitle").removeAttr("disabled");
+  $("#notecontent").removeAttr("disabled");
   deleteNote(index);
 }

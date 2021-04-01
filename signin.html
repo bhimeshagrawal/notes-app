@@ -2,55 +2,67 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="signin.css">
-    <link rel="icon" href="img/notera.ico" type="image/x-icon">
-    <title>Notera-Log In</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="icon" href="img/notera.ico" />
+    <title>Signin-Notera</title>
+    <link href="signin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
 </head>
 
-<body>
-    <div class="nav box-shadow-3">
-        <nav>
-            <p class="navbar-brand h1">Notera</p>
-        </nav>
+<body class="colorbg">
+    <div id="registerbox">
+        <form id="registerForm" action="">
+            <h1 style="margin-bottom: 100px;">NOTERA</h1>
+            <h3>Register Here</h3>
+            <input type="email" name="" id="userRegisterEmail" placeholder="Email">
+            <input type="password" name="" id="userRegisterPassword" placeholder="Password">
+            <button type="submit" id="registerBtn">Register</button>
+        </form>
+        <hr>
+        <p>Already have an Account</p>
+        <button type="submit" id="btnToLogin" onclick="hideRegister()">Sign In</button>
     </div>
-    <div class="alreadyblock">
-        <div class="bottom-left">
-            <p>New User !</p>
-            <a class="registerlink" href="signup.html">Register Here</a>
-        </div>
-        <img class="alreadyimg" src="img/cherry-35.png" alt="" width="300px" height="300px">
-        
-
+    <div id="loginbox">
+        <form id="loginForm" action="">
+            <h1 style="margin-bottom: 100px;">NOTERA</h1>
+            <h3>Login In </h3>
+            <input type="email" name="" id="userLoginEmail" placeholder="Email">
+            <input type="password" name="" id="userLoginPassword" placeholder="Password">
+            <button type="submit" id="loginBtn">Log in</button>
+        </form>
+        <hr>
+        <p>New here ?</p>
+        <button type="submit" id="btnToRegister" onclick="hideLogin()">Register</button>
     </div>
-    <div class="logomobile">
-        <img src="img/name with logo.jpeg" alt="Notera" class="logomobile">
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyBC-Xpa-amkYm58mQlYij84prSCi8XWI1E",
+            authDomain: "notera-app.firebaseapp.com",
+            databaseURL: "https://notera-app-default-rtdb.firebaseio.com",
+            projectId: "notera-app",
+            storageBucket: "notera-app.appspot.com",
+            messagingSenderId: "640534703861",
+            appId: "1:640534703861:web:a083430f01e90998d75fbc",
+            measurementId: "G-VZRVE15GQJ"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
 
-        <p class="logop">Please Sign In </p>
-    </div>
-    <form action="" method="get">
-        <div class="container">
-            <input type="email" id="inputEmail" class="input box-shadow-1" placeholder="Email address" autofocus>
-            <input type="password" id="inputPassword" class="input box-shadow-1" placeholder="Password">
-        </div>
+        //make auth and firestore references
+        const auth = firebase.auth();
+        const db = firebase.firestore();
 
-        <div class="checkbox container my-2">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
-
-        </div>
-        <div class="container">
-            <button class="btn-m my-2">Sign In</button>
-        </div>
-        <div class="container">
-            <button class="btn-m my-2"><img class="icon"
-                    src="https://img.icons8.com/plasticine/50/000000/google-logo.png" />Continue with Google</button>
-        </div>
-    </form>
-
+        //update firestore settings
+        db.settings({ timeStampsInSnapshots: true });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="auth.js"></script>
+    <script src="signin.js"></script>
 </body>
 
 </html>
