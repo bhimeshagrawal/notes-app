@@ -1,13 +1,3 @@
-$("#loginbox").css('display', 'none');
-function hideLogin(){
-    $("#loginbox").css('display', 'none');
-    $("#registerbox").css('display', 'block');
-}
-function hideRegister(){
-    $("#registerbox").css('display', 'none');
-    $("#loginbox").css('display', 'block');
-
-}
 const registerForm = document.querySelector('#registerForm');
 registerForm.addEventListener('submit', (e) => {
     e.preventDefault();
