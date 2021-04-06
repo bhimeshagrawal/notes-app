@@ -31,14 +31,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="btn"aria-current="page" href="#">Profile</a>
-          </li>
-          <li class="nav-item">
-            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#loginModal">Login
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#profileModal"
+              id="profileBtn">Profile
             </button>
           </li>
           <li class="nav-item">
-            <a class="btn disabled" href="#" tabindex="-1" aria-disabled="true">Logout</a>
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#loginModal" id="loginBtn">Login
+            </button>
+          </li>
+          <li class="nav-item">
+            <a class="btn" href="#" tabindex="-1" aria-disabled="true" id="logoutBtn">Logout</a>
           </li>
         </ul>
       </div>
@@ -46,16 +48,14 @@
   </nav>
 
 
-
-
-  <!-- MODAL START -->
+  <!--Login MODAL START -->
   <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="loginModalLabel">Login</h5>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i
-              class="fas fa-times-circle"></i></button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times-circle"
+              id="closeModal"></i></button>
         </div>
         <div class="modal-body">
           <div class="container">
@@ -63,11 +63,11 @@
               <!-- signin form  -->
               <form class="form-signin" id="loginForm">
                 <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
-                <div class="social-login text-center">
-                  <button class="btn btn-info text-center" type="button"><i class="fab fa-google-plus-g"></i> Sign in
+                <!-- <div class="social-login text-center">
+                  <button class="btn btn-info text-center" type="button" onclick="googleSignInPopup()"><i class="fab fa-google-plus-g"></i> Sign in
                     with Google+</button>
                 </div>
-                <p style="text-align:center"> OR </p>
+                <p style="text-align:center"> OR </p> -->
                 <input type="email" id="userLoginEmail" class="form-control" placeholder="Email address" required=""
                   autofocus="">
                 <input type="password" id="userLoginPassword" class="form-control" placeholder="Password" required="">
@@ -80,25 +80,27 @@
                   Sign up New Account</button>
               </form>
               <!-- password reset form  -->
-              <form action="/reset/password/" class="form-reset">
+              <form class="form-reset" id="resetForm">
                 <input type="email" id="resetEmail" class="form-control" placeholder="Email address" required=""
                   autofocus="">
-                <button class="btn btn-primary btn-block" type="submit">Reset Password</button>
+                <button class="btn btn-primary btn-block" id="resetBtn">Reset Password</button>
                 <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>
               </form>
               <!-- signup form  -->
               <form action="/signup/" class="form-signup" id="registerForm">
-                <div class="social-login text-center">
+                <!-- <div class="social-login text-center">
                   <button class="btn btn-info " type="button"><i class="fab fa-google-plus-g"></i>
                     Sign up with Google+</button>
                 </div>
-                <p style="text-align:center">OR</p>
-                <input type="text" id="userRegisterName" class="form-control" placeholder="Full name" required="" autofocus="">
+                <p style="text-align:center">OR</p> -->
+                <input type="text" id="userRegisterName" class="form-control" placeholder="Full name" required=""
+                  autofocus="">
                 <input type="email" id="userRegisterEmail" class="form-control" placeholder="Email address" required
                   autofocus="">
-                <input type="password" id="userRegisterPassword" class="form-control" placeholder="Password" required autofocus="">
-                <input type="password" id="userRegisterRepeatPassword" class="form-control" placeholder="Repeat Password" required
+                <input type="password" id="userRegisterPassword" class="form-control" placeholder="Password" required
                   autofocus="">
+                <input type="password" id="userRegisterRepeatPassword" class="form-control"
+                  placeholder="Repeat Password" required autofocus="">
                 <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Sign
                   Up</button>
                 <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> Back</a>
@@ -118,57 +120,84 @@
   <!-- MODAL END -->
 
 
-
-
-  <!-- MAIN PAGE START -->
-  <div class="row">
-    <!-- left side/note-list window -->
-    <div class="col-md-4">
-      <!-- search bar -->
-      <form id="searchbox" class="d-flex">
-        <input id="searchTxt" class="form-control me-2 col" type="search" placeholder="Search here" aria-label="Search">
-      </form>
-      <!-- many dummy notes  -->
-      <div id="notes" class="notelist"></div>
-    </div>
-    <!-- right side/note edit window  -->
-    <div class="col-md-8">
-      <!-- toolbar -->
-      <ul class="nav border bgnav">
-        <li class="nav-item">
-          <button id="addBtn" class="my-1 mx-1 btn btn-outline-success" type="submit">
-            <i class="fas fa-save"></i>
-          </button>
-        </li>
-        <li class="nav-item">
-          <button id="disableViewBtn" class="my-1 mx-1 btn btn-outline-secondary disabled" onclick="disableView()"
-            type="submit">
-            <i class="fas fa-times-circle"></i>
-          </button>
-        </li>
-      </ul>
-      <!-- notestitle  -->
-      <div class="form-group bglightblue">
-        <textarea id="notetitle" class="form-control px-10 " placeholder="Notes Title" id="note-title" rows="2"
-          required></textarea>
+  <!-- profile modal starts -->
+  <div id="profileModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="profileModalLabel">Profile</h5>
+          <button type="button" class="btn btn-secondary close" id="closeModal" data-bs-dismiss="modal"><i
+              class="fas fa-times-circle"></i></button>
+        </div>
+        <div class="modal-body profileModalBody">
+          <h4>Email : </h4>
+          <h4>Name : </h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+        </div>
       </div>
-      <hr style="margin: 5px;">
-      <!-- text area -->
-      <div class="form-group bglightblue">
-        <textarea id="notecontent" class="form-control px-10 py-20" placeholder="Note-Content" id="note-content"
-          rows="15"></textarea>
+    </div>
+  </div>
+  <!-- profile modal ends  -->
+
+
+  <!-- main page start  -->
+  <div class="container-fluid">
+    <!-- MAIN PAGE START -->
+    <div class="row">
+      <!-- left side/note-list window -->
+      <div class="col-md-4">
+        <!-- search bar -->
+        <form id="searchbox" class="d-flex">
+          <input id="searchTxt" class="form-control me-2 col" type="search" placeholder="Search here"
+            aria-label="Search">
+        </form>
+        <!-- many dummy notes  -->
+        <div id="notes" class="notelist">
+          <button class="my-1 btn btn-default deleteBtn " type="submit" id="${index}" onclick="deleteNote(this.id)" style="display: none;"></button>
+        </div>
+      </div>
+      <!-- right side/note edit window  -->
+      <div class="col-md-8">
+        <!-- toolbar -->
+        <ul class="nav border bgnav">
+          <li class="nav-item">
+            <button id="addBtn" class="my-1 mx-1 btn btn-outline-success" type="submit" title="Save">
+              <i class="fas fa-save"></i>
+            </button>
+          </li>
+          <li class="nav-item">
+            <button id="disableViewBtn" class="my-1 mx-1 btn btn-outline-secondary disabled" onclick="disableView()"
+              type="submit">
+              <i class="fas fa-times-circle"></i>
+            </button>
+          </li>
+        </ul>
+        <!-- notestitle  -->
+        <form action="" id="createNoteForm">
+          <div class="form-group bglightblue">
+            <textarea id="notetitle" class="form-control px-10 " placeholder="Notes Title" id="note-title" rows="2"
+              required></textarea>
+          </div>
+          <!-- text area -->
+          <div class="form-group bglightblue">
+            <textarea id="notecontent" class="form-control px-10 py-20" placeholder="Note-Content" id="note-content"
+              rows="15"></textarea>
+          </div>
+
+        </form>
       </div>
     </div>
   </div>
 
 
-
   <!-- scrip tags -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="index.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
   <script>
     var firebaseConfig = {
       apiKey: "AIzaSyBC-Xpa-amkYm58mQlYij84prSCi8XWI1E",
@@ -189,6 +218,11 @@
     db.settings({ timeStampsInSnapshots: true });
   </script>
   <script src="signin.js"></script>
+  <script src="index.js"></script>
+
+
+
 
 </body>
+
 </html>
