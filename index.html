@@ -131,8 +131,8 @@
               class="fas fa-times-circle"></i></button>
         </div>
         <div class="modal-body profileModalBody">
-          <h4>Email : </h4>
-          <h4>Name : </h4>
+          <div>Logged in as <span class="profileName"></span></div>
+          <div class="profileEmail"></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
@@ -199,6 +199,7 @@
   <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
   <script>
+    var t = "profileEmail";
     var firebaseConfig = {
       apiKey: "AIzaSyBC-Xpa-amkYm58mQlYij84prSCi8XWI1E",
       authDomain: "notera-app.firebaseapp.com",
