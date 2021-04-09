@@ -49,6 +49,10 @@
 .bgnav{
     background-color: #f8f9fa;
 }
+.emailVerifyBox{
+    margin: 20% auto;
+    text-align: center;
+}
 @media only screen and (max-width: 768px) {
     .notelistitem{
         cursor: pointer;

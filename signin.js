@@ -1,6 +1,8 @@
 $("#loginBtn").show();
 $("#logoutBtn").hide();
 $('#profileBtn').hide();
+$(".emailVerifyBox").hide();
+
 var n;
 var addTitle = document.getElementById("notetitle");
 var addTxt = document.getElementById("notecontent");
@@ -10,11 +12,9 @@ var addBtn = document.getElementById("addBtn");
 
 //listener for auth state changes
 auth.onAuthStateChanged(user => {
-    // console.log(user);
-    t = user.email ;
-    
+    console.log(user);
+    t = user.email;
     // console.log(user.email);
-  
     // console.log(currentUserEmail);
     if (user) {
         db.collection(user.email).get()
@@ -30,11 +30,11 @@ auth.onAuthStateChanged(user => {
                 title: addTitle.value,
                 text: addTxt.value
             })
-                alert("Successfully added, Reload to see changes.");
-                addTitle.value = "";
-                addTxt.value = "";
+            alert("Successfully added, Reload to see changes.");
+            addTitle.value = "";
+            addTxt.value = "";
         });
-        
+
         const setupNotes = (data) => {
             var index = 0
             if (data.length) {
@@ -58,6 +58,26 @@ auth.onAuthStateChanged(user => {
                     index++;
                 });
                 noteList.innerHTML = html;
+                //check if email is verified or not
+                var a = user.emailVerified;
+                console.log(a);
+                if (a == false) {
+                    $(".main-page").hide();
+                    $(".emailVerifyBox").show();
+                }
+                else {
+                    $(".main-page").show();
+                    $(".emailVerifyBox").hide();
+                }
+                $("#sendVerificationLinkBtn").click(function () {
+                    var user = firebase.auth().currentUser;
+                    user.sendEmailVerification().then(function () {
+                        // Email sent.
+                        alert("An email with the verification link has been sent to you");
+                    }).catch(function (error) {
+                        // An error happened.
+                    });
+                });
             } else {
                 noteList.innerHTML =
                     ` 
@@ -70,7 +90,7 @@ auth.onAuthStateChanged(user => {
         db.collection(user.email).get().then(snapshot => {
             setupNotes(snapshot.docs);
         });
-       
+
 
     }
     else {
@@ -97,8 +117,8 @@ const setui = (user) => {
         $("#loginBtn").hide();
         $("#logoutBtn").show();
         $('#profileBtn').show();
-        
-        
+
+
     } else {
         accountdetails.innerHTML = '';
         $("#loginBtn").show();
@@ -121,9 +141,9 @@ registerForm.addEventListener('submit', (e) => {
         $("#closeModal").click();
         return db.collection('users').doc(cred.user.uid).set({
             name: registerForm['userRegisterName'].value,
-        });
-        
-        registerForm.reset();
+        }).catch(error => {   
+            alert(error.message);
+         });
     });
 });
 
@@ -140,7 +160,9 @@ loginForm.addEventListener('submit', (e) => {
         // console.log(cred.user);
         $("#closeModal").click();
         loginForm.reset();
-    });
+    }).catch(error => {   
+        alert(error.message);
+     });
 });
 
 
@@ -152,5 +174,7 @@ logout.addEventListener('click', (e) => {
         // console.log("user logged out");
         // $("#closeModal").click();
         location.reload();
-    })
+    }).catch(error => {   
+        alert(error.message);
+     });
 })
