@@ -3,6 +3,7 @@ $("#logoutBtn").hide();
 $('#profileBtn').hide();
 $(".emailVerifyBox").hide();
 
+
 var n;
 var addTitle = document.getElementById("notetitle");
 var addTxt = document.getElementById("notecontent");
@@ -11,7 +12,7 @@ var user = firebase.auth().currentUser;
 var addBtn = document.getElementById("addBtn");
 
 //listener for auth state changes
-auth.onAuthStateChanged(user => {
+firebase.auth().onAuthStateChanged(user => {
     console.log(user);
     t = user.email;
     // console.log(user.email);
@@ -60,7 +61,7 @@ auth.onAuthStateChanged(user => {
                 noteList.innerHTML = html;
                 //check if email is verified or not
                 var a = user.emailVerified;
-                console.log(a);
+                // console.log(a);
                 if (a == false) {
                     $(".main-page").hide();
                     $(".emailVerifyBox").show();

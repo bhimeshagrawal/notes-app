@@ -93,9 +93,6 @@ console.log("welcome to notera");
 // }
 
 
-
-
-
 let search = document.getElementById("searchTxt");
 search.addEventListener("input", function () {
   let inputVal = search.value;
@@ -137,17 +134,16 @@ function disableView() {
 }
 function deleteNote(b) {
   if (firebase.auth().currentUser !== null) {
-    // console.log("user id: " + firebase.auth().currentUser.email);
     var t = firebase.auth().currentUser.email;
+    // console.log(t,b);
     db.collection(t).doc(b).delete().then(() => {
-
       var l = "notecard" + b;
       document.getElementById(l).style.display = "none";
       // alert("Reload to see changes");
-      // console.log('Document successfully deleted!');
-    }).catch((error) => {
-      console.error('Error removing document: ', error);
-    });
+      console.log('Document successfully deleted!');
+    }).catch(error => {   
+      alert(error.message);
+   });
   }
 
 }
@@ -162,7 +158,6 @@ function editNote(index) {
   $("#notecontent").html(childrenText.innerHTML);
   $("#notetitle").removeAttr("disabled");
   $("#notecontent").removeAttr("disabled");
-
   deleteNote(index);
 }
 
