@@ -5,7 +5,11 @@ search.addEventListener("input", function () {
   let notelistitems = document.getElementsByClassName("notelistitem");
   Array.from(notelistitems).forEach(function (element) {
     let cardTxt = element.getElementsByClassName("notelisttext")[0].innerText;
+    let cardTitle = element.getElementsByClassName("notelisttitle")[0].innerText;
     if (cardTxt.includes(inputVal)) {
+      element.style.display = "block";
+    }
+    else if(cardTitle.includes(inputVal)){
       element.style.display = "block";
     }
     else {

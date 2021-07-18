@@ -100,6 +100,7 @@ Some free space here ...
 //change on user login logout
 const setui = (user) => {
     if (user) {
+        console.log(user.uid);
         db.collection("users")
             .doc(user.uid)
             .get()
