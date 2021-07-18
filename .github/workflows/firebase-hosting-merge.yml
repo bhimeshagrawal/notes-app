@@ -18,5 +18,3 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NOTES_APP_BD6B4 }}'
           channelId: live
           projectId: notes-app-bd6b4
-        env:
-          FIREBASE_CLI_PREVIEWS: hostingchannels

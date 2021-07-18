@@ -176,7 +176,7 @@
         <ul class="nav border bgnav">
           <li class="nav-item">
             <button id="addBtn" class="my-1 mx-1 btn btn-outline-success" type="submit" title="Save">
-              <i class="fas fa-save"></i>
+              <i class="fas fa-save"></i> Save
             </button>
           </li>
           <li class="nav-item">
@@ -188,14 +188,18 @@
         </ul>
         <!-- notestitle  -->
         <form action="" id="createNoteForm">
-          <div class="form-group bglightblue">
+          <div class="form-group bglightblue d-flex">
             <textarea id="notetitle" class="form-control px-10 " placeholder="Notes Title" id="note-title" rows="2"
               required></textarea>
+            <button type="button" style="height: 40px; border-radius: 4px;" id="copyTitle">Copy</button>
+
           </div>
+
           <!-- text area -->
-          <div class="form-group bglightblue">
-            <textarea id="notecontent" class="form-control px-10 py-20" placeholder="Note-Content" id="note-content"
+          <div class="form-group bglightblue d-flex">
+            <textarea id="notecontent" class="form-control px-10 py-20" placeholder="Note Description" id="note-content"
               rows="15"></textarea>
+            <button type="button" style="height: 40px; border-radius: 4px;" id="copyDesc">Copy</button>
           </div>
 
         </form>
@@ -232,6 +236,7 @@
   </script>
   <script src="signin.js"></script>
   <script src="index.js"></script>
+  <script src="copy.js"></script>
 </body>
 
 </html>
